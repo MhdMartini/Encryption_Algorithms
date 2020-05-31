@@ -2,7 +2,7 @@ from math import gcd as gcd
 from functools import reduce
 from random import getrandbits, sample, seed, shuffle, choice
 from time import time
-#from LSA_analyzer import *
+from lsa_analyzer import *
 
 # Encrypted characters
 chars = r' .abcdefghijklmnopqrstuvwxyz0123456789?,:@/\#$ABCDEFGHIJKLMNOPQRSTUVWXYZ>!<";%^&*()-+*\~' + "'" + chr(9) + chr(10) + chr(13)
@@ -108,13 +108,6 @@ def decode(encryption):
         if bob_key < LARGEST:
             bob_key = key_save
     return text
-
-
-t = time()
-e = encrypt(Text)
-d = decode(e)
-print(f'Speed: {len(Text)/(time() - t)} characters per s')
-print(f'\t\t{(time() - t)/len(Text)}s per character')
 
 
 
